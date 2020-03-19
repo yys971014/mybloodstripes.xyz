@@ -2,13 +2,22 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
-
+/**
+ * 前端页面路由
+ */
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "",
     component: () =>
-      import(/* 首页 */ "../views/Home.vue")
+      // import(/* 首页 */ "../views/Home.vue")
+      import(/* 首页 */ "../views/index.vue")
+  },
+  {
+    path:"/Home",
+    name:"",
+    component: () =>
+      import(/**主页 */ "../views/Home.vue")
   },
   {
     path: "/about",
