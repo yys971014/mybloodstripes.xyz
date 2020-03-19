@@ -7,19 +7,22 @@ Vue.use(VueRouter);
  */
 const routes = [
   {
-    path: "/",
-    name: "",
-    component: () =>
-      // import(/* 首页 */ "../views/Home.vue")
-      import(/* 首页 */ "../views/index.vue")
+    path:"/",
+    name:"",
+    component:() => import('../views/index.vue')
   },
-  {
-    path:"/Home",
+  { // 登录页面
+    path:"/login",
     name:"",
     component: () =>
-      import(/**主页 */ "../views/Home.vue")
+      import(/* 登录页*/ "../views/main/login.vue")
   },
-  {
+  { // Home
+    path: "/home",
+    name: "",
+    component: () => import("../views/Home.vue")
+  },
+  { // About
     path: "/about",
     name: "about",
     component: () =>
