@@ -1,6 +1,8 @@
 <template>
     <div class="index">
-        这个是首页
+        <!-- 这个是首页 -->
+        
+        <!-- <button type="button" class="layui-btn layui-btn-normal">百搭按钮</button> -->
     </div>
 </template>
 
@@ -13,6 +15,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-
+<style lang="stylus" >
+    .index
+        width 100%
+        height 100%
 </style>
