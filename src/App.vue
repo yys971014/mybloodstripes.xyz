@@ -1,17 +1,11 @@
 <template>
   <div id="app">
-    <!-- 顶部header -->
-    <!-- <el-header style="height:40px">
-      <div class="item" @mouseenter="mouse()">关于1</div>
-      <div class="item">关于2</div>
-      <div class="item">关于3</div>
-    </el-header> -->
-    <!-- 内容main -->
+    <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> -->
     <router-view @toPage="toPage"/>
   </div>
 </template>
 <script>
-// import about from "./views/About.vue"
 export default {
   methods:{
 
@@ -21,12 +15,6 @@ export default {
     toPage(url){
       this.$router.push({path:url});
     },
-
-    // mouse(){
-    //   // debugger // 打断点
-    //   console.log('鼠标移入 关于1')
-    //   alert('鼠标移入')
-    // }
   },
 }
 </script>
@@ -48,34 +36,8 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    // 布局相关设置  
+    // 布局相关设置
     display: flex;
     flex-direction: column;
     align-items: center;
-
-  // 布局容器-顶部
-  .el-header
-    width 100%
-    height 40px
-    background-color rgba(47,38,33,0.5)
-    display flex
-    flex-direction row
-    justify-content flex-end
-    align-items center
-
-  // 顶部框
-  .item
-    width 60px
-    height 100%
-    // 布局
-    display flex
-    flex-direction column
-    justify-content center
-    // 字体
-    color #FFFFDC
-    font-weight 550
-
-  // 居左边距
-  .top_item_left
-    padding-right 10px
 </style>

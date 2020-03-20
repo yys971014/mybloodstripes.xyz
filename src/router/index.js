@@ -9,13 +9,20 @@ const routes = [
   {
     path:"/",
     name:"",
-    component:() => import('../views/index.vue')
+    component:() => import('../views/index.vue'),
+    children:[
+      {
+        path:"/lll",
+        name:"",
+        component:()=>import('../views/main/login.vue')
+      }
+    ]
   },
   { // 登录页面
     path:"/login",
     name:"",
     component: () =>
-      import(/* 登录页*/ "../views/main/login.vue")
+      import(/* 登录页*/ "../views/login/login.vue")
   },
   { // Home
     path: "/home",

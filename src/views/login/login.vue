@@ -2,6 +2,9 @@
     <div class="index">
         <div class="page_0">
             <el-form class="form_0" label-position="left">
+                <el-form-item>
+                    <img class="ima_1" alt="登录 logo" src="../../assets/logo.png" />
+                </el-form-item>
                 <el-form-item label="用户名" label-width="70px">
                     <el-input placeholder="请输入用户名"></el-input>
                 </el-form-item>
