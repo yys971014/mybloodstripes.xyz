@@ -6,11 +6,11 @@ Vue.use(VueRouter);
  * 前端页面路由
  */
 const routes = [
-  {
+  { // 所有主要页面
     path:"/",
     name:"",
     component:() => import('../views/index.vue'),
-    children:[
+    children:[  // main
       {
         path:"/lll",
         name:"",

@@ -25,6 +25,7 @@ export default {
     // background-image: url(https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1584620599&di=61e36666f62104cc6ae086b4fa5a110e&src=http://01.minipic.eastday.com/20161213/20161213135128_5a29f92732d13a0461e09c15250d4cd5_9.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-attachment: fixed;
 
   #app
     // 大小相关设置
