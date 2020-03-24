@@ -17,7 +17,8 @@
                 </el-submenu>
                 <el-menu-item index="2">
                     <template slot="title">
-                        <router-link to="/lll">我的设置</router-link>
+                        <div @click="test()">我的设置</div>
+                        <!-- <router-link to="/lll">我的设置</router-link> -->
                     </template>
                 </el-menu-item>
             </el-menu>
@@ -79,8 +80,28 @@ export default {
     mounted(){
     },
     methods:{
+        /**
+         * 固有方法--菜单栏选择
+         */
         handleSelect(key, keyPath) {
             console.log(key, keyPath);
+        },
+
+        /**
+         * 测试方法
+         */
+        test(){
+            alert('点击了测试方法')
+            this.$axios({
+                method:"get",
+                url:"/api/toWeb/hhh.do",
+                params:{name:123}
+            }).
+            then((ok)=>{
+                console.log(ok)
+            },(err)=>{
+                console.log(err)
+            })
         }
     }
 }
