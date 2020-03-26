@@ -6,17 +6,29 @@ Vue.use(VueRouter);
  * 前端页面路由
  */
 const routes = [
-  { // 所有主要页面
+  { // 主页展示
     path:"/",
     name:"",
-    component:() => import('../views/index.vue'),
+    component:() => import('../views/main/index.vue'),
     children:[  // main
       {
         path:"/lll",
         name:"",
         component:()=>import('../views/main/login.vue')
-      }
+      },
     ]
+  },
+  { // 功能展示
+    path:"/displayFunc",
+    name:"displayFunc",
+    component:() => import('../views/displayFunc/index.vue'),
+    children:[
+      {
+        path:"/displayFunc/chatRoom",
+        name:"chatRoom",
+        component:()=>import('../views/displayFunc/chatRoom.vue')
+      }
+    ],
   },
   { // 登录页面
     path:"/login",
@@ -35,6 +47,10 @@ const routes = [
     component: () =>
       import(/* 关于页 */ "../views/About.vue")
   },
+  { // 路由错误,
+    path:"*",
+    redirect: "/"
+  }
 ];
 
 const router = new VueRouter({

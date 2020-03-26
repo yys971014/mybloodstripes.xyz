@@ -1,8 +1,9 @@
+<!-- 主页展示底板
+ -->
 <template>
     <div class="index">
         <div class="index_0_0">
             <el-menu
-                :default-active="activeIndex"
                 class="el-menu-demo"
                 mode="horizontal"
                 @select="handleSelect"
@@ -10,17 +11,18 @@
                 text-color="#fff"
                 active-text-color="#24ADF3">
                 <el-submenu index="1">
-                    <template slot="title">我的页面</template>
-                    <el-menu-item index="2-1">选项1</el-menu-item>
-                    <el-menu-item index="2-2">选项2</el-menu-item>
-                    <el-menu-item index="2-3">选项3</el-menu-item>
+                    <template slot="title">页面设计</template>
+                    <el-menu-item index="1-1">个性设置</el-menu-item>
+                    <el-menu-item index="1-2">选项2</el-menu-item>
+                    <el-menu-item index="1-3">选项3</el-menu-item>
                 </el-submenu>
-                <el-menu-item index="2">
-                    <template slot="title">
-                        <div @click="test()">我的设置</div>
-                        <!-- <router-link to="/lll">我的设置</router-link> -->
-                    </template>
-                </el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">功能展示</template>
+                    <el-menu-item index="2-0">后台管理</el-menu-item>
+                    <el-menu-item index="2-1">CSDN博客</el-menu-item>
+                    <el-menu-item index="2-2">网页留言板</el-menu-item>
+                    <el-menu-item index="2-3">网页聊天室</el-menu-item>
+                </el-submenu>
             </el-menu>
         </div>
         <div class="index_0">
@@ -51,19 +53,7 @@
                 </el-col>
             </div>
             <div class="index_2">
-                <div class="index_2_t">
-                    是打发点深Vvaasvafsv
-                    asfdasvasvabb
-                    svafsdv
-                    imgfasdfadsfadsfjadslkf是大饭店深V啦发是阿深VAV vafvasvva是大V啊发送方法vasdfva
-                </div>
-                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
-                fdasdfadsfa
-                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
-                说法放假啦是顶峰
-                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
-                发电部
-                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
+                <!-- <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机"> -->
                 <router-view/>
             </div>
         </div>
@@ -81,27 +71,47 @@ export default {
     },
     methods:{
         /**
-         * 固有方法--菜单栏选择
+         * 固有方法--菜单栏功能
          */
         handleSelect(key, keyPath) {
             console.log(key, keyPath);
+            switch(key){
+                case '2-1':
+                    this.toPath('https://me.csdn.net/yys190418');
+                    break;
+                case '2-2':
+                    console.log('留言',this.activeIndex)
+                    break;
+                case '2-3':
+                    this.toPage('/displayFunc/chatRoom');
+                    break;
+                default:{
+                    console.log('未匹配功能')
+                }
+            }
         },
 
         /**
          * 测试方法
          */
         test(){
-            alert('点击了测试方法')
-            this.$axios({
-                method:"get",
-                url:"/api/toWeb/hhh.do",
-                params:{name:123}
-            }).
-            then((ok)=>{
-                console.log(ok)
-            },(err)=>{
-                console.log(err)
+            this.$axios.post('/toWeb/login2.do',{
+                name:'张三'
+            }).then((ret) =>{
+                console.log(ret)
             })
+        },
+
+        /**
+         * toPage => 跳转页面路由
+         * toPath => 跳转超链接
+         * url => 跳转路径
+         */
+        toPage(url = ''){
+            this.$router.push({path:url});
+        },
+        toPath(url = ''){
+            window.location.href = url;
         }
     }
 }
