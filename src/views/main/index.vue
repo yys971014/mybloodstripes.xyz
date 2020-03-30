@@ -47,14 +47,15 @@
                         </el-menu-item>
                         <el-menu-item index="4">
                             <!-- <i class="el-icon-setting"></i> -->
-                            <span slot="title">导航四</span>
+                            <span slot="title" @click="test2()">导航四</span>
                         </el-menu-item>
                     </el-menu>
                 </el-col>
             </div>
             <div class="index_2">
-                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
-                <router-view/>
+                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机"
+                    id="imm">
+                <!-- <router-view/> -->
             </div>
         </div>
     </div>
@@ -92,17 +93,6 @@ export default {
         },
 
         /**
-         * 测试方法
-         */
-        test(){
-            this.$axios.post('/toWeb/login2.do',{
-                name:'张三'
-            }).then((ret) =>{
-                console.log(ret)
-            })
-        },
-
-        /**
          * toPage => 跳转页面路由
          * toPath => 跳转超链接
          * url => 跳转路径
@@ -112,6 +102,21 @@ export default {
         },
         toPath(url = ''){
             window.location.href = url;
+        },
+        
+        /**
+         * 测试方法
+         */
+        test(){
+            this.$axios.post('/toWeb/login2.do',{
+                name:'张三'
+            }).then((ret) =>{
+                console.log(ret)
+            })
+        },
+        test2(){
+            alert('触发');
+            this.$('#imm').addClass('animated bounceInDown')
         }
     }
 }

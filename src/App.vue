@@ -28,7 +28,7 @@ export default {
 <style lang="stylus">
   body{
     // 页面背景设置
-    margin-top 0
+    margin-top: 0;
     background-image: url(../src/style/image/301737.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
