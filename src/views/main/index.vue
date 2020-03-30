@@ -53,7 +53,7 @@
                 </el-col>
             </div>
             <div class="index_2">
-                <!-- <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机"> -->
+                <img src="http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg" alt="飞机">
                 <router-view/>
             </div>
         </div>
@@ -139,7 +139,7 @@ export default {
     
     // 顶部菜单栏样式
     .el-menu-demo{
-        width 84%
+        width 78%
         display flex
         flex-direction row
         justify-content flex-end
@@ -147,7 +147,7 @@ export default {
 
     // 中部两栏
     .index_0{
-        width 84%
+        width 78%
         display flex
         flex-direction row
         justify-content space-between

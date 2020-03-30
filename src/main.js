@@ -1,17 +1,18 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import router from "./router";  // 路由
 import store from "./store";
 // 引用jQuery
 import $ from 'jquery';
+Vue.prototype.$ = $;
 // 引入element-UI
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI); // 引入elementUI
 // 引用axios
-import Api from './axios/api.js';
+import Api from './utils/axios.js';
 Vue.prototype.$axios = Api; // 赋值$axios
 
-Vue.use(ElementUI); // 引入elementUI
 Vue.config.productionTip = false;
 
 new Vue({
