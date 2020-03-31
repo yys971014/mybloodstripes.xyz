@@ -28,7 +28,7 @@ export default {
 <style lang="stylus">
   body{
     // 页面背景设置
-    margin-top: 0;
+    margin: 0;
     background-image: url(../src/style/image/301737.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -41,7 +41,7 @@ export default {
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
     // background-attachment: fixed;
-    width: 99vw;
+    width: 100%;
     height: 97vh;
     // 字体相关设置
     font-family: "Avenir", Helvetica, Arial, sans-serif;
