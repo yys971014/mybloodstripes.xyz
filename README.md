@@ -1,25 +1,25 @@
-# demo02-20.1.14
+# 学习vue
 
-## Project setup
+## 项目导包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 项目打包
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 修复错误
 ```
 npm run lint
 ```
 
-### Customize configuration
+### 自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 "# mybloodstripes.xyz" 
