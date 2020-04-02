@@ -29,18 +29,14 @@ export default {
   body{
     // 页面背景设置
     margin: 0;
-    background-image: url(../src/style/image/301737.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-  }
-
-  #app
-    // 大小相关设置
-    // background-image: url(../static/image/301737.jpg);
+    // background-image: url(../src/asset/image/301737.jpg);
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
     // background-attachment: fixed;
+  }
+
+  #app
+    // 体积相关设置
     width: 100%;
     height: 97vh;
     // 字体相关设置
