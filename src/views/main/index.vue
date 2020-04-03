@@ -65,10 +65,10 @@
                         </div>
                         <div class="page_2_x">
                             <div class="page_2_img">
-                                <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=94151444,661214992&fm=11&gp=0.jpg" alt="图片">
+                                <img src="../../../src/assets/image/jt03.jpg" alt="GitHub">
                             </div>
                             <div class="page_2_tit">
-                                <h1>不知道放什么2-3</h1>
+                                <h1>GitHub</h1>
                             </div>
                         </div>
                         <div class="page_2_x">
