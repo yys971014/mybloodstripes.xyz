@@ -198,18 +198,22 @@ export default {
                 case '0-5':
                     this._changeScroll(this.pageInfo_h.hei5);
                     break;
-                case '2-1':
-                    this.toPath('https://me.csdn.net/yys190418');
-                    break;
-                case '2-2':
-                    console.log('留言')
-                    break;
-                case '2-3':
-                    this.toPage('/displayFunc/chatRoom');
-                    break;
                 default:{
-                    console.log('未匹配功能')
+                    this.open();
+                    // console.log('未匹配功能')
                 }
+                // case '2-1':
+                //     this.toPath('https://me.csdn.net/yys190418');
+                //     break;
+                // case '2-2':
+                //     console.log('留言')
+                //     break;
+                // case '2-3':
+                //     this.toPage('/displayFunc/chatRoom');
+                //     break;
+                // default:{
+                //     console.log('未匹配功能')
+                // }
             }
         },
 
@@ -317,6 +321,9 @@ export default {
             }).then((ret) =>{
                 console.log(ret)
             })
+        },
+        open() {
+            this.$message('功能未发布');
         },
     },
     destroyed(){

@@ -38,7 +38,7 @@ export default {
   #app
     // 体积相关设置
     width: 100%;
-    height: 97vh;
+    height: 100%;
     // 字体相关设置
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
