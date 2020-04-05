@@ -36,7 +36,7 @@
         </div>
         <div class="index_x index_1_0" id="div_1">
             <h1>欢迎来到我的主页</h1>
-            <h2>本网站目前仅用于练习web项目</h2>
+            <h2>本网站持续更新</h2>
         </div>
         <div class="index_x index_2_0">
             <div class="page">
