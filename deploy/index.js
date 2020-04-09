@@ -10,7 +10,7 @@ scpClient.scp(
     host: server.host,
     port: server.port,
     username: server.username,
-    // password: server.password,
+    password: server.password,
     privateKey: server.privateKey,
     path: server.path
   },

@@ -10,7 +10,7 @@ const SERVER_LIST = [
         host: '49.232.161.123',// ip
         port: 22,// 端口
         username: 'root', // 登录服务器的账号
-        password: 'Gy4Zfz75qP7eV6',// 登录服务器的账号    
+        // password: 'Gy4Zfz75qP7eV6',// 登录服务器的账号
         privateKey: fs.readFileSync('E:/work-Vue/demo02-20.1.14/deploy/MyServer'),  // 密钥文件
         path: '/opt/vue/mybloodstripes'// 发布至静态服务器的项目路径
     },{
@@ -19,7 +19,7 @@ const SERVER_LIST = [
         host: '49.232.161.123',// ip
         port: 22,// 端口
         username: 'root', // 登录服务器的账号
-        password: 'Gy4Zfz75qP7eV6',// 登录服务器的账号    
+        // password: 'Gy4Zfz75qP7eV6',// 登录服务器的账号 
         privateKey: fs.readFileSync('E:/work-Vue/demo02-20.1.14/deploy/MyServer'),  // 密钥文件
         path: '/opt/vue/dist'// 发布至静态服务器的项目路径
     }

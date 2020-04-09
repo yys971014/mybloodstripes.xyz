@@ -1,4 +1,5 @@
 // vue.config.js
+// 隐藏配置可在这里配置
 // 项目打包
 module.exports = {
     // 选项...
@@ -20,6 +21,18 @@ module.exports = {
                 }
             }
         }
+    },
+    // 添加加载markdown文件配置
+    chainWebpack: config => {
+      config.module
+          .rule('md')
+          .test(/\.md$/)
+          .use('html-loader')
+          .loader('html-loader')
+          .end()
+          .use('markdown-loader')
+          .loader('markdown-loader')
+          .end()
     },
 
     lintOnSave: false, // 默认true，警告会被输出到命令行，但不会使得编译失败。如果为false，则不输出警告

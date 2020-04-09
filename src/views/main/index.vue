@@ -2,6 +2,7 @@
  -->
 <template>
     <div class="index">
+        <!-- 顶部栏 -->
         <div class="index_0_0">
             <el-menu
                 class="el-menu-demo"
@@ -17,7 +18,7 @@
                     <el-menu-item index="0-2">其他主页</el-menu-item>
                     <el-menu-item index="0-3">网站功能</el-menu-item>
                     <el-menu-item index="0-4">我的连接</el-menu-item>
-                    <el-menu-item index="0-5">个人开发</el-menu-item>
+                    <el-menu-item index="0-5">更新记录</el-menu-item>
                 </el-submenu>
                 <el-submenu index="1">
                     <template slot="title">页面设计</template>
@@ -34,10 +35,12 @@
                 </el-submenu>
             </el-menu>
         </div>
+        <!-- 内容欢迎 -->
         <div class="index_x index_1_0" id="div_1">
-            <h1>欢迎来到我的主页</h1>
-            <h2>本网站持续更新</h2>
+            <h1>个人博客网站（开发中）</h1>
+            <h2>本网站持续更新···</h2>
         </div>
+        <!-- 其他主页 -->
         <div class="index_x index_2_0">
             <div class="page">
                 <div class="page_top">
@@ -99,6 +102,7 @@
                 </div>
             </div>
         </div>
+        <!-- 网站功能 -->
         <div class="index_x index_3_0">
             <div class="page">
                 <div class="page_top">
@@ -109,6 +113,7 @@
                 <!-- <div class="page_bot"></div> -->
             </div>
         </div>
+        <!-- 我的连接 -->
         <div class="index_x index_4_0">
             <div class="page">
                 <div class="page_top">
@@ -118,12 +123,16 @@
                 </div>
             </div>
         </div>
+        <!-- 更新记录 -->
         <div class="index_x index_5_0">
             <div class="page">
                 <div class="page_top">
                     <font class="t_numb">05</font>
-                    <font class="t_title">不知道写什么02</font>
+                    <font class="t_title">网站更新记录</font>
                     <div class="t_xian"></div>
+                </div>
+                <div class="page_bot updateRecord">
+                    <div class="md" v-html="readme"></div>
                 </div>
             </div>
         </div>
@@ -163,11 +172,14 @@
 </template>
 
 <script>
+import readme from '../../assets/markdown/updateRecord.md';
+// import readme from '../../../static/markdown/test01.md';
 export default {
     data () {
         return{
             activeIndex: '0-1', // 首页展示绑定
             pageInfo_h: '', // 页面高度数据（集合）
+            readme: this.md2html(readme),
         }
     },
     mounted(){
@@ -198,22 +210,18 @@ export default {
                 case '0-5':
                     this._changeScroll(this.pageInfo_h.hei5);
                     break;
-                default:{
-                    this.open();
-                    // console.log('未匹配功能')
-                }
-                // case '2-1':
-                //     this.toPath('https://me.csdn.net/yys190418');
-                //     break;
+                case '2-1':
+                    this.toPath('https://me.csdn.net/yys190418');
+                    break;
                 // case '2-2':
                 //     console.log('留言')
                 //     break;
                 // case '2-3':
                 //     this.toPage('/displayFunc/chatRoom');
                 //     break;
-                // default:{
-                //     console.log('未匹配功能')
-                // }
+                default:{
+                    this.$message('功能未发布');
+                }
             }
         },
 
@@ -322,9 +330,6 @@ export default {
                 console.log(ret)
             })
         },
-        open() {
-            this.$message('功能未发布');
-        },
     },
     destroyed(){
         // 销毁监听高度变化
@@ -334,7 +339,10 @@ export default {
 </script>
 
 <style lang="stylus">
-    @import '../../../src/assets/public/index.styl';
+    // 全局样式
+    @import '../../../src/assets/css/public/index.styl';
+    // .md样式
+    @import '../../../src/assets/css/public/markdown.styl';
     $url = "../../../src/assets/image/301737.jpg";
     // 整体背景
     body{
@@ -385,6 +393,9 @@ export default {
     .page{
         width 78%
         height 90%
+        display flex
+        flex-direction column
+        align-items center
     }
     // 标题容器
     .page_top{
@@ -409,12 +420,13 @@ export default {
     }
     // 标题线
     .t_xian{
-        width 16%
+        width 130%
         height 0.8px
         background-color #CCCCCC
     }
     // 内容框
     .page_bot{
+        width 85%
         height 75%
     }
 
@@ -472,6 +484,10 @@ export default {
     }
     .index_5_0{
         background-color rgba(0,0,0,0)
+        .updateRecord{
+            background-color #fff
+            overflow hidden
+        }
     }
     // 中部两栏
     // .index_0{
