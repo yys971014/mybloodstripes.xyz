@@ -86,15 +86,11 @@
         padding: 0px 24px;
         max-width: 800px;
         white-space: pre-wrap;
+        float:right
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-    // code {
-    //     font-family: Consolas, Monaco, Andale Mono, monospace;
-    //     line-height: 1.5;
-    //     font-size: 13px;
-    // }
 
     code, pre {
         border-radius: 3px;
@@ -104,6 +100,7 @@
 
     code {
         font-family: Consolas, Monaco, Andale Mono, monospace;
+        color: green;
         margin: 0 2px;
     }
 
@@ -117,6 +114,7 @@
     pre > code {
         border: 0;
         display: inline;
+        text-align: left; // code居左
         max-width: initial;
         padding: 0;
         margin: 0;
@@ -125,7 +123,6 @@
         font-size: .85em;
         white-space: pre;
         background: 0 0;
-
     }
 
     code {

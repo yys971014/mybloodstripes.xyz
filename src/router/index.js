@@ -9,7 +9,7 @@ const routes = [
   { // 主页展示
     path:"/",
     name:"",
-    component:() => import('../views/main/main.vue'),
+    component:() => import('../views/main/index.vue'),
     // children:[  // main
     //   {
     //     path:"/lll",

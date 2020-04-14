@@ -176,7 +176,8 @@
 </template>
 
 <script>
-import readme from '../../assets/markdown/updateRecord.md';
+// import readme from '../../assets/markdown/updateRecord.md';
+import readme from 'E:/work-www/material/updateRecord.md';
 export default {
     data () {
         return{
@@ -225,6 +226,7 @@ export default {
                     break;
                 default:{
                     this.$message('功能未发布');
+                    break;
                 }
             }
         },

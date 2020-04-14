@@ -22,12 +22,17 @@ Vue.use(animated);
 
 // 引入showdown，用做.md文件加载
 import showdown from 'showdown';
-Vue.prototype.md2html = (md)=> {
+Vue.prototype.md2html = (md) => {
   let converter = new showdown.Converter()
   let text = md.toString()
   let html = converter.makeHtml(text)
   return html
 };
+
+// 引入Vue-markdown编辑器插件
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css';
+Vue.use(mavonEditor);
 
 // 阻止启动生产消息，常用作指令。
 Vue.config.productionTip = false;
