@@ -1,7 +1,10 @@
-<!-- 主页展示底板
+<!-- 
+    主页展示底板
+    path:"",
+    name:"",
  -->
 <template>
-    <div class="index">
+    <div class="main">
         <!-- 顶部栏 -->
         <div class="index_0_0">
             <el-menu
@@ -16,7 +19,7 @@
                     <template slot="title">首页</template>
                     <el-menu-item index="0-1">欢迎</el-menu-item>
                     <el-menu-item index="0-2">其他主页</el-menu-item>
-                    <el-menu-item index="0-3">网站功能</el-menu-item>
+                    <el-menu-item index="0-3">我的博客</el-menu-item>
                     <el-menu-item index="0-4">我的连接</el-menu-item>
                     <el-menu-item index="0-5">更新记录</el-menu-item>
                 </el-submenu>
@@ -32,6 +35,7 @@
                     <el-menu-item index="2-1">CSDN博客</el-menu-item>
                     <el-menu-item index="2-2">网页留言板</el-menu-item>
                     <el-menu-item index="2-3">网页聊天室</el-menu-item>
+                    <el-menu-item index="2-4">写博客</el-menu-item>
                 </el-submenu>
             </el-menu>
         </div>
@@ -63,7 +67,7 @@
                                 <img src="../../../src/assets/image/jt02.jpg" alt="CSDN博客">
                             </div>
                             <div class="page_2_tit">
-                                <h1>我的博客</h1>
+                                <h1>CSDN博客</h1>
                             </div>
                         </div>
                         <div class="page_2_x">
@@ -79,7 +83,7 @@
                                 <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3888737945,3658484475&fm=26&gp=0.jpg" alt="图片">
                             </div>
                             <div class="page_2_tit">
-                                <h1>不知道放什么2-4</h1>
+                                <h1>我的博客</h1>
                             </div>
                         </div>
                         <div class="page_2_x">
@@ -102,12 +106,12 @@
                 </div>
             </div>
         </div>
-        <!-- 网站功能 -->
+        <!-- 我的博客 -->
         <div class="index_x index_3_0">
             <div class="page">
                 <div class="page_top">
                     <font class="t_numb">03</font>
-                    <font class="t_title">网站功能</font>
+                    <font class="t_title">我的博客</font>
                     <div class="t_xian"></div>
                 </div>
                 <!-- <div class="page_bot"></div> -->
@@ -173,7 +177,6 @@
 
 <script>
 import readme from '../../assets/markdown/updateRecord.md';
-// import readme from '../../../static/markdown/test01.md';
 export default {
     data () {
         return{
@@ -183,9 +186,7 @@ export default {
         }
     },
     mounted(){
-        console.log('监听页面')
         this.pageInfo_h = this._getPageData();
-        console.log(this.pageInfo_h)
         document.addEventListener("scroll",this._handleScroll);
     },
     methods:{
@@ -219,6 +220,9 @@ export default {
                 // case '2-3':
                 //     this.toPage('/displayFunc/chatRoom');
                 //     break;
+                case '2-4':
+                    this.toPage('/blogs/redact');
+                    break;
                 default:{
                     this.$message('功能未发布');
                 }
@@ -321,7 +325,7 @@ export default {
         },
         
         /**
-         * 测试方法
+         * 测试方法--测试连接后台
          */
         test(){
             this.$axios.post('/toWeb/login2.do',{
@@ -330,6 +334,7 @@ export default {
                 console.log(ret)
             })
         },
+        
     },
     destroyed(){
         // 销毁监听高度变化
@@ -339,25 +344,19 @@ export default {
 </script>
 
 <style lang="stylus">
-    // 全局样式
-    @import '../../../src/assets/css/public/index.styl';
-    // .md样式
-    @import '../../../src/assets/css/public/markdown.styl';
-    $url = "../../../src/assets/image/301737.jpg";
-    // 整体背景
-    body{
-        background-image: url($url);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
+    @import '../../../src/assets/css/public/index.styl';    // 全局样式
+    @import '../../../src/assets/css/public/markdown.styl'; // .md样式
     // 页面样式
-    .index{
+    .main{
         width 100%
         // 布局相关设置
         display flex
         flex-direction column
         align-items center
+        background-image: url($main_url);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
     }
 
     // 导航菜单
